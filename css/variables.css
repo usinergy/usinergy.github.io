@@ -1,0 +1,28 @@
+/* ============================================
+   Design Tokens — modamood
+   ============================================ */
+:root {
+  /* Colors */
+  --bg: #f7f5f2;
+  --surface: #fff;
+  --surface-a: rgba(255, 255, 255, 0.92);
+  --txt: #111827;
+  --muted: #6b7280;
+  --line: #e5e7eb;
+  --primary: #0f172a;
+  --accent: #d97706;
+  --accent-s: #fff5e8;
+  --ok: #0f766e;
+  --err: #be123c;
+
+  /* Shadows */
+  --sh: 0 18px 40px rgba(15, 23, 42, 0.08);
+
+  /* Border Radius */
+  --rl: 28px;
+  --rm: 18px;
+  --rs: 14px;
+
+  /* Layout */
+  --mx: 1260px;
+}

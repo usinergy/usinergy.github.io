@@ -1,0 +1,19 @@
+# Build artifacts
+_build.py
+*.pyc
+__pycache__/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+*.swp
+*.swo
+*~
+
+# Dependencies (future)
+node_modules/
+.env
+.env.local

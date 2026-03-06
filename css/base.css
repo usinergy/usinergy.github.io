@@ -1,0 +1,50 @@
+/* ============================================
+   Base — Reset, Typography, Forms
+   ============================================ */
+
+/* Reset */
+* { box-sizing: border-box; margin: 0; }
+html { scroll-behavior: smooth; }
+
+/* Typography & Body */
+body {
+  font-family: 'Manrope', sans-serif;
+  color: var(--txt);
+  background:
+    radial-gradient(circle at top left, rgba(255, 244, 230, 0.9), transparent 24%),
+    radial-gradient(circle at top right, rgba(241, 245, 249, 0.95), transparent 28%),
+    var(--bg);
+}
+
+img { display: block; width: 100%; height: auto; }
+a { color: inherit; text-decoration: none; }
+h1, h2, h3, h4, p { margin-top: 0; }
+button, input, select, textarea { font: inherit; }
+
+/* Form Elements */
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+input, select, textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 11px 12px;
+  background: #fff;
+  color: var(--txt);
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: 2px solid rgba(217, 119, 6, 0.16);
+  border-color: rgba(217, 119, 6, 0.34);
+}
+
+textarea { resize: vertical; min-height: 80px; }
+
+/* Utilities */
+.muted { color: var(--muted); }
+.sh { width: min(calc(100% - 32px), var(--mx)); margin: 0 auto; }

@@ -1,69 +1,106 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
-<title>modamood.com</title>
-<meta name="description" content=" modamood.com ">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src="https://unpkg.com/jquery@3.4.1/dist/jquery.min.js"></script>
-<style>
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>modamood — Bebek Giyim</title>
+  <meta name="description" content="modamood — Türkiye'nin en sevilen online bebek giyim mağazası.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets (separated by concern) -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/responsive.css">
 </head>
-<body background="background.jpeg">
-<div class="container">
-<div class="row">
-<div class="signup-form col-md-8">
-<form>
-    <h1><span>modamood.com</span></h1>
-<style>
-h1 {
-  width: 70%;
-  margin: auto;
-  color: rgb(255, 255, 255);
-  font-family: 'Lato', sans-serif;
-  font-size: 48px;
-  font-weight: 400;
-  text-align: left;
-  line-height: 80px;
-}
-h1 span {
-  background: rgba(34, 13, 13, 0.5);
-  -moz-box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.5);
-  -webkit-box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.5);
-  box-shadow: 30 30 30 10px rgba(0, 0, 0, 0.5);
-}
-</style>
-<h2><span>is currently for sale -> usinergy@yahoo.com</span></h2>
-<style>
-h2 {
-  width: 70%;
-  margin: auto;
-  color: rgb(255, 255, 255);
-  font-family: 'Lato', sans-serif;
-  font-size: 24px;
-  font-weight: 400;
-  text-align: left;
-  line-height: 80px;
-}
-h2 span {
-  background: rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.5);
-  -webkit-box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.5);
-  box-shadow: 30 30 30 10px rgba(0, 0, 0, 0.5);
-}
-</style>
-<div class="form-group">
-</div>
-</div>
-<div class="container">
-<footer class="row">
-</div>
-</footer>
-</div>
+<body>
+
+  <!-- Demo Banner -->
+  <div class="ban">⚠️ Deneysel demo — Bu bir üretim web sitesi değildir. Sepet ve ödeme işlemleri simülasyondur.</div>
+
+  <!-- Header -->
+  <header>
+    <div class="sh hdr">
+      <!-- Brand Logo -->
+      <div class="logo" onclick="go('home')">
+        <img src="assets/logo.svg" alt="modamood" width="42" height="42">
+        <div>
+          <div>modamood</div>
+          <div style="font-size:.76rem;font-weight:600;color:var(--muted)">Bebek Giyim Mağazası</div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Toggle -->
+      <button class="mob-toggle" onclick="document.querySelector('nav').classList.toggle('open')" aria-label="Menü">☰</button>
+
+      <!-- Navigation -->
+      <nav id="mainNav">
+        <a onclick="go('home')">Ana Sayfa</a>
+        <a onclick="go('shop')">Koleksiyon</a>
+        <a onclick="go('about')">Hakkımızda</a>
+        <a onclick="go('faq')">SSS</a>
+        <a onclick="go('contact')">İletişim</a>
+      </nav>
+
+      <!-- Cart -->
+      <button class="cart-btn" onclick="go('cart')">🛒 Sepet <span class="cnt" id="cartBadge">0</span></button>
+    </div>
+  </header>
+
+  <!-- Main Content (SPA target) -->
+  <main class="sh" id="app"></main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="sh">
+      <div class="fgrid">
+        <div class="fcol">
+          <h4>modamood</h4>
+          <p style="font-size:.9rem;line-height:1.7;margin-bottom:12px">Türkiye'nin en sevilen online bebek giyim mağazası. Yumuşak kumaşlar, pastel renkler ve minik bedenler için özenle seçilmiş koleksiyonlar.</p>
+          <div style="display:flex;gap:6px;flex-wrap:wrap">
+            <span class="badge">SSL Güvenli</span>
+            <span class="badge">iyzico ile Ödeme</span>
+            <span class="badge">Hızlı Kargo</span>
+          </div>
+        </div>
+        <div class="fcol">
+          <h4>Kategoriler</h4>
+          <a onclick="filterCat(1);go('shop')">Tulumlar</a>
+          <a onclick="filterCat(2);go('shop')">Pijamalar</a>
+          <a onclick="filterCat(3);go('shop')">Elbiseler</a>
+          <a onclick="filterCat(5);go('shop')">Dış Giyim</a>
+          <a onclick="filterCat(6);go('shop')">Ayakkabılar</a>
+          <a onclick="filterCat(7);go('shop')">Şapka &amp; Aksesuar</a>
+        </div>
+        <div class="fcol">
+          <h4>Müşteri Hizmetleri</h4>
+          <a onclick="go('faq')">Sıkça Sorulan Sorular</a>
+          <a onclick="go('contact')">İletişim</a>
+          <a onclick="go('shipping')">Kargo Bilgileri</a>
+          <a onclick="go('returns')">İade Politikası</a>
+        </div>
+        <div class="fcol">
+          <h4>Yasal</h4>
+          <a onclick="go('privacy')">Gizlilik Politikası</a>
+          <a onclick="go('kvkk')">KVKK Aydınlatma</a>
+          <a onclick="go('terms')">Mesafeli Satış Sözleşmesi</a>
+          <a onclick="go('about')">Hakkımızda</a>
+        </div>
+      </div>
+      <div class="fcopy">
+        <span>© 2026 modamood — Tüm hakları saklıdır. Deneysel kullanım amaçlıdır.</span>
+        <span>Fotoğraflar: Pexels · Ödeme altyapısı simülasyondur.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Application Entry Point (ES Module) -->
+  <script type="module" src="js/app.js"></script>
+
 </body>
 </html>
-
